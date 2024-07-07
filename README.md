@@ -4,7 +4,8 @@
 
 ## Welcome! 👋
 
-This my design for simple sign up page by html, css, bootstrap and js.
+This is my design for simple sign up page by html, css, bootstrap and js.
+
 The design is responsive for mobile.
 
 ### Links
