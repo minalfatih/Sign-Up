@@ -1,0 +1,236 @@
+:root {
+  --yellow: #ffaf00;
+  --dark-blue: #3f3d56;
+  --very-dark-blue: #323145;
+  --light-gray: #e6e6e6;
+  --soft-red: #ff6584;
+}
+body {
+  background-color: var(--very-dark-blue);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+@media (max-width: 767px) {
+  main {
+    width: 95%;
+  }
+}
+section {
+  position: relative;
+}
+section.disabled {
+  display: none;
+}
+section::before,
+section::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+}
+section::before {
+  left: 0;
+  bottom: -50px;
+  background-color: var(--soft-red);
+  width: 200px;
+  height: 200px;
+}
+section::after {
+  top: -100px;
+  right: -50px;
+  background-color: var(--yellow);
+  width: 300px;
+  height: 300px;
+}
+@media (max-width: 990px) {
+  section::before {
+    filter: blur(10px);
+  }
+}
+@media (max-width: 576px) {
+  section::before {
+    filter: blur(10px);
+  }
+  section::before {
+    bottom: -10px;
+  }
+  section::after {
+    right: -5px;
+  }
+}
+section .welcome-container {
+  backdrop-filter: blur(12px);
+  background-color: #00000010;
+}
+section .welcome-container .image {
+  position: relative;
+  bottom: 100px;
+}
+section .welcome-container p {
+  color: var(--light-gray);
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+@media (max-width: 990px) {
+  section .welcome-container .image {
+    bottom: 0;
+  }
+  section .welcome-container p {
+    display: none;
+  }
+}
+section .info {
+  background-color: var(--dark-blue);
+}
+section .info h1 {
+  color: var(--light-gray);
+}
+section .info form div {
+  position: relative;
+}
+section .info label {
+  width: fit-content;
+  color: var(--dark-blue);
+  position: relative;
+  top: 47px;
+  left: 50px;
+  transition: 0.3s linear;
+}
+section .info label.active {
+  color: var(--yellow);
+  top: 0;
+  left: 0;
+}
+section .info input {
+  border: none;
+  outline: none;
+  caret-color: var(--yellow);
+  padding: 15px 15px 15px 50px;
+  border-radius: 6px;
+}
+section .info .fa-user,
+.fa-envelope,
+.fa-lock,
+section .info .btn {
+  font-size: 1.2rem;
+  position: absolute;
+  top: 50px;
+  color: var(--dark-blue);
+}
+section .info .fa-user,
+.fa-envelope,
+.fa-lock {
+  left: 20px;
+}
+section .info .btn {
+  top: 45px;
+  right: 20px;
+  padding: 0;
+  border: none;
+}
+section .info .btn.btn.active {
+  top: 50px;
+}
+section .info .btn.active .fa-eye-slash {
+  display: none;
+}
+section .info .fa-eye {
+  display: none;
+}
+section .info .btn.active .fa-eye {
+  display: block;
+}
+section .info .error-mesg {
+  color: var(--soft-red);
+  display: none;
+}
+section .info .error-mesg.active {
+  display: block;
+}
+section .info input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--yellow);
+  color: var(--very-dark-blue);
+  font-size: 1.2rem;
+  transition: 0.3s linear;
+}
+section .info input[type="submit"]:hover {
+  background-color: var(--very-dark-blue);
+  color: var(--light-gray);
+  border: 1px dashed var(--yellow);
+}
+section .info div span {
+  color: var(--light-gray);
+}
+section .info div span + a {
+  color: var(--yellow);
+}
+.complete {
+  background-color: var(--light-gray);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  border-radius: 15px;
+  display: none;
+}
+.complete.active {
+  display: block;
+}
+.complete .container {
+  width: 100%;
+  height: 100%;
+}
+.complete svg {
+  color: var(--yellow);
+  font-size: 2rem;
+  position: absolute;
+  top: -45px;
+  right: 0;
+  cursor: pointer;
+}
+.complete .correct {
+  position: relative;
+  background-color: #4caf50;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.3s linear;
+}
+.complete .correct.active {
+  transform: scale(1);
+}
+.complete .correct::before,
+.complete .correct::after {
+  content: "";
+  position: absolute;
+  background-color: var(--light-gray);
+  width: 10px;
+  border-radius: 10px;
+  transition: 0.3s 0.5s linear;
+}
+.complete .correct::before {
+  height: 0;
+  bottom: 50px;
+  left: 110px;
+  transform: rotate(25deg);
+}
+.complete .correct.active::before {
+  height: 100px;
+}
+.complete .correct::after {
+  height: 0;
+  bottom: 45px;
+  left: 75px;
+  transform: rotate(130deg);
+}
+.complete .correct.active::after {
+  height: 50px;
+}
