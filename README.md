@@ -9,4 +9,4 @@ The design is responsive for mobile.
 
 ### Links
 
-- Live Site URL: [Sign Up]([https://minalfatih.github.io/Sign-Up/)])
+- Live Site URL: [[Sign Up](https://minalfatih.github.io/Sign-Up/)]
